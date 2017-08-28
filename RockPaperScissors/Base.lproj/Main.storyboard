@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeD-WJ-czw">
+                                <rect key="frame" x="149" y="60" width="78" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Rock">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="89o-fl-tUb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGA-dO-c1x">
+                                <rect key="frame" x="143" y="122" width="89" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Paper">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="paper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwx-oU-HnM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bv0-cv-OEv">
+                                <rect key="frame" x="122" y="184" width="131" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Scissors">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9g-mh-rBb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-P3-nG5">
+                                <rect key="frame" x="167" y="262" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZu-u9-GFT">
+                                <rect key="frame" x="167" y="298" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hLI-P3-nG5" firstAttribute="top" secondItem="Bv0-cv-OEv" secondAttribute="bottom" constant="24" id="7Hd-yF-R0A"/>
+                            <constraint firstItem="Bv0-cv-OEv" firstAttribute="top" secondItem="lGA-dO-c1x" secondAttribute="bottom" constant="8" id="DEC-LN-GPp"/>
+                            <constraint firstItem="kZu-u9-GFT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gaf-rh-VYe"/>
+                            <constraint firstItem="hLI-P3-nG5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MDg-N5-2hL"/>
+                            <constraint firstItem="PeD-WJ-czw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xxj-ju-Z9d"/>
+                            <constraint firstItem="lGA-dO-c1x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YbB-RM-FmX"/>
+                            <constraint firstItem="lGA-dO-c1x" firstAttribute="top" secondItem="PeD-WJ-czw" secondAttribute="bottom" constant="8" id="fCA-3G-Xkw"/>
+                            <constraint firstItem="PeD-WJ-czw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="jIc-dY-vuo"/>
+                            <constraint firstItem="Bv0-cv-OEv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pid-Ll-Edg"/>
+                            <constraint firstItem="kZu-u9-GFT" firstAttribute="top" secondItem="hLI-P3-nG5" secondAttribute="bottom" constant="15" id="vPQ-0r-nVS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="challenge" destination="hLI-P3-nG5" id="kCu-ge-mdf"/>
+                        <outlet property="outcome" destination="kZu-u9-GFT" id="VK5-C8-VF5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
